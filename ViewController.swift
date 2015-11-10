@@ -49,6 +49,7 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
     let applicationSupportInstallerScript: String = "/usr/local/deeploy/installer/deeploy.installer"
     let applicationSupportRunScript: String = "/usr/local/deeploy/installer/deeploy.logout"
     let localDeeployPreferencePlist: String = "/Library/Preferences/com.disney.deeploy"
+    let logFile: String = "/Users/Shared/Deeploy/deeploy.log"
     
     //run files
     let installerFile: String = "com.disney.deeploy.installer"
@@ -107,7 +108,7 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
             
             if self.appToUpdate.count > 0 {
                 self.writeLocalPreferenceInt(theValue: 1, theKey: "UpdatesAvailable")
-                self.updateProgessLabel(message: "There are \(self.appToUpdate.count) available updates for your computer")
+                self.updateProgessLabel(message: "There is/are \(self.appToUpdate.count) available updates for your computer")
             }
                 
             else {
@@ -115,10 +116,9 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
                 self.updateProgessLabel(message: "All your applications are up-to-date")
             }
             
-            self.updateGear.stopAnimation(self)
-            
             dispatch_async(dispatch_get_main_queue(), {
                 //println("main queue, after the previous block")
+                self.updateGear.stopAnimation(self)
                 self.TableView.reloadData()
                 self.appDelegate.window.makeKeyAndOrderFront(self)
             })
@@ -126,10 +126,39 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
         
     }
     
+    func printTimestamp() -> String {
+        let timestamp = NSDateFormatter.localizedStringFromDate(NSDate(), dateStyle: .MediumStyle, timeStyle: .ShortStyle)
+        let currentTime = String(timestamp)
+        
+        return currentTime
+    }
+    
+    func writeLog(message theMessage:String) {
+        
+        let currentTimestamp = printTimestamp()
+        let fileManager = NSFileManager.defaultManager()
+        let message:NSString = ("\(currentTimestamp) -> \(theMessage)")
+        
+        if fileManager.fileExistsAtPath(logFile) {
+            do {
+                try message.writeToFile(logFile, atomically: true, encoding: NSUTF8StringEncoding)
+            } catch let error as NSError! {
+                print(error)
+            }
+        } else {
+            
+         fileManager.createFileAtPath(logFile, contents: nil, attributes: nil)
+            do {
+                try theMessage.writeToFile(logFile, atomically: true, encoding: NSUTF8StringEncoding)
+            } catch let error as NSError! {
+                print(error)
+            }
+        }
+    }
+    
     func initializePreferences() -> NSURL? {
         
         let fileManager = NSFileManager.defaultManager()
-        //let urlToLibrary = fileManager.URLsForDirectory(.LibraryDirectory, inDomains: .UserDomainMask)
         let pathToLibrary: String = "/Users/Shared/"
         let urlToLibrary: NSURL = NSURL(fileURLWithPath: pathToLibrary)
         if let libraryDirectory:NSURL = urlToLibrary as NSURL!{
@@ -348,6 +377,8 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
             
         else {
             print("\(hostName) in not avaialble")
+            sleep(3)
+            exit(1)
         }
     }
     
@@ -666,8 +697,8 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
                     }
                 }
             }
-        } catch {
-            print("something")
+        } catch let error as NSError {
+            print(error)
         }
         
         do {
@@ -694,8 +725,8 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
                     }
                 }
             }
-        } catch {
-            print("something")
+        } catch let error as NSError {
+            print(error)
         }
     }
     
@@ -879,10 +910,10 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
         self.updateGear.stopAnimation(self)
         self.appToUpdate = []
         self.updateProgessLabel(message: "All avaialable updates have been installed")
+        self.TableView.reloadData()
+        self.checkUpdateButtonLabel.enabled = true
         self.writeLocalPreferenceInt(theValue: 5, theKey: "DaysLeftBeforeUpdate")
         self.writeLocalPreferenceInt(theValue: 0, theKey: "UpdatesAvailable")
-        self.checkUpdateButtonLabel.enabled = true
-        self.TableView.reloadData()
     
     }
     
@@ -924,15 +955,13 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
                 
             }
             
-            self.updateGear.stopAnimation(self)
-            
             dispatch_async(dispatch_get_main_queue(), {
                 //println("main queue, after the previous block")
                 //self.TableView.reloadData()
                 //self.updateGear.stopAnimation(self)
 
                 self.TableView.reloadData()
-                //self.updateGear.stopAnimation(self)
+                self.updateGear.stopAnimation(self)
             })
         })
     }
