@@ -1,0 +1,459 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		24327DD61AC2A39D00E20592 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24327DD51AC2A39D00E20592 /* AppDelegate.swift */; };
+		24327DD81AC2A39D00E20592 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24327DD71AC2A39D00E20592 /* Images.xcassets */; };
+		24327DDB1AC2A39D00E20592 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24327DD91AC2A39D00E20592 /* MainMenu.xib */; };
+		24327DE71AC2A39D00E20592 /* DeeployTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24327DE61AC2A39D00E20592 /* DeeployTests.swift */; };
+		245DD7381ADFE0F8002323AD /* com.disney.Deeploy.plist in Resources */ = {isa = PBXBuildFile; fileRef = 245DD7371ADFE0F8002323AD /* com.disney.Deeploy.plist */; };
+		248F60D31AC2D31B00476F20 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 248F60D21AC2D31B00476F20 /* Media.xcassets */; };
+		248F60D51AC2D53D00476F20 /* Deeploy.png in Resources */ = {isa = PBXBuildFile; fileRef = 248F60D41AC2D53D00476F20 /* Deeploy.png */; };
+		249AD0711AC2AC8B00DB7EDE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249AD06F1AC2AC8B00DB7EDE /* ViewController.swift */; };
+		249AD0721AC2AC8B00DB7EDE /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 249AD0701AC2AC8B00DB7EDE /* ViewController.xib */; };
+		249AD0741AC2C1AD00DB7EDE /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249AD0731AC2C1AD00DB7EDE /* AppModel.swift */; };
+		249AD0761AC2D18800DB7EDE /* ps.sh in Resources */ = {isa = PBXBuildFile; fileRef = 249AD0751AC2D18800DB7EDE /* ps.sh */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		24327DE11AC2A39D00E20592 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 24327DC81AC2A39D00E20592 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 24327DCF1AC2A39D00E20592;
+			remoteInfo = Deeploy;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		24327DD01AC2A39D00E20592 /* Deeploy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Deeploy.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		24327DD41AC2A39D00E20592 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		24327DD51AC2A39D00E20592 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		24327DD71AC2A39D00E20592 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		24327DDA1AC2A39D00E20592 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		24327DE01AC2A39D00E20592 /* DeeployTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DeeployTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		24327DE51AC2A39D00E20592 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		24327DE61AC2A39D00E20592 /* DeeployTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeeployTests.swift; sourceTree = "<group>"; };
+		245DD7371ADFE0F8002323AD /* com.disney.Deeploy.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = com.disney.Deeploy.plist; sourceTree = "<group>"; };
+		248F60D21AC2D31B00476F20 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Media.xcassets; path = ../Media.xcassets; sourceTree = "<group>"; };
+		248F60D41AC2D53D00476F20 /* Deeploy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Deeploy.png; sourceTree = "<group>"; };
+		248F60D61AC3114900476F20 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		248F60D81AC3115000476F20 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		248F60DA1AC3115B00476F20 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		249AD06F1AC2AC8B00DB7EDE /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = ../ViewController.swift; sourceTree = "<group>"; };
+		249AD0701AC2AC8B00DB7EDE /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ViewController.xib; path = ../ViewController.xib; sourceTree = "<group>"; };
+		249AD0731AC2C1AD00DB7EDE /* AppModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
+		249AD0751AC2D18800DB7EDE /* ps.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = ps.sh; sourceTree = "<group>"; };
+		24BB89421ACD440C0065C65C /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		24327DCD1AC2A39D00E20592 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		24327DDD1AC2A39D00E20592 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		24327DC71AC2A39D00E20592 = {
+			isa = PBXGroup;
+			children = (
+				24BB89421ACD440C0065C65C /* ServiceManagement.framework */,
+				248F60DA1AC3115B00476F20 /* Foundation.framework */,
+				248F60D81AC3115000476F20 /* Cocoa.framework */,
+				248F60D61AC3114900476F20 /* AppKit.framework */,
+				24327DD21AC2A39D00E20592 /* Deeploy */,
+				24327DE31AC2A39D00E20592 /* DeeployTests */,
+				24327DD11AC2A39D00E20592 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		24327DD11AC2A39D00E20592 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				24327DD01AC2A39D00E20592 /* Deeploy.app */,
+				24327DE01AC2A39D00E20592 /* DeeployTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		24327DD21AC2A39D00E20592 /* Deeploy */ = {
+			isa = PBXGroup;
+			children = (
+				248F60D21AC2D31B00476F20 /* Media.xcassets */,
+				249AD0731AC2C1AD00DB7EDE /* AppModel.swift */,
+				249AD06F1AC2AC8B00DB7EDE /* ViewController.swift */,
+				249AD0701AC2AC8B00DB7EDE /* ViewController.xib */,
+				245DD7371ADFE0F8002323AD /* com.disney.Deeploy.plist */,
+				24327DD51AC2A39D00E20592 /* AppDelegate.swift */,
+				24327DD71AC2A39D00E20592 /* Images.xcassets */,
+				24327DD91AC2A39D00E20592 /* MainMenu.xib */,
+				24327DD31AC2A39D00E20592 /* Supporting Files */,
+			);
+			path = Deeploy;
+			sourceTree = "<group>";
+		};
+		24327DD31AC2A39D00E20592 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				249AD0751AC2D18800DB7EDE /* ps.sh */,
+				248F60D41AC2D53D00476F20 /* Deeploy.png */,
+				24327DD41AC2A39D00E20592 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		24327DE31AC2A39D00E20592 /* DeeployTests */ = {
+			isa = PBXGroup;
+			children = (
+				24327DE61AC2A39D00E20592 /* DeeployTests.swift */,
+				24327DE41AC2A39D00E20592 /* Supporting Files */,
+			);
+			path = DeeployTests;
+			sourceTree = "<group>";
+		};
+		24327DE41AC2A39D00E20592 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				24327DE51AC2A39D00E20592 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		24327DCF1AC2A39D00E20592 /* Deeploy */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 24327DEA1AC2A39E00E20592 /* Build configuration list for PBXNativeTarget "Deeploy" */;
+			buildPhases = (
+				24327DCC1AC2A39D00E20592 /* Sources */,
+				24327DCD1AC2A39D00E20592 /* Frameworks */,
+				24327DCE1AC2A39D00E20592 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Deeploy;
+			productName = Deeploy;
+			productReference = 24327DD01AC2A39D00E20592 /* Deeploy.app */;
+			productType = "com.apple.product-type.application";
+		};
+		24327DDF1AC2A39D00E20592 /* DeeployTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 24327DED1AC2A39E00E20592 /* Build configuration list for PBXNativeTarget "DeeployTests" */;
+			buildPhases = (
+				24327DDC1AC2A39D00E20592 /* Sources */,
+				24327DDD1AC2A39D00E20592 /* Frameworks */,
+				24327DDE1AC2A39D00E20592 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				24327DE21AC2A39D00E20592 /* PBXTargetDependency */,
+			);
+			name = DeeployTests;
+			productName = DeeployTests;
+			productReference = 24327DE01AC2A39D00E20592 /* DeeployTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		24327DC81AC2A39D00E20592 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = "Dino Libertino";
+				TargetAttributes = {
+					24327DCF1AC2A39D00E20592 = {
+						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = SB99CSLAH5;
+					};
+					24327DDF1AC2A39D00E20592 = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = 24327DCF1AC2A39D00E20592;
+					};
+				};
+			};
+			buildConfigurationList = 24327DCB1AC2A39D00E20592 /* Build configuration list for PBXProject "Deeploy" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 24327DC71AC2A39D00E20592;
+			productRefGroup = 24327DD11AC2A39D00E20592 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				24327DCF1AC2A39D00E20592 /* Deeploy */,
+				24327DDF1AC2A39D00E20592 /* DeeployTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		24327DCE1AC2A39D00E20592 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				245DD7381ADFE0F8002323AD /* com.disney.Deeploy.plist in Resources */,
+				248F60D31AC2D31B00476F20 /* Media.xcassets in Resources */,
+				24327DD81AC2A39D00E20592 /* Images.xcassets in Resources */,
+				248F60D51AC2D53D00476F20 /* Deeploy.png in Resources */,
+				249AD0761AC2D18800DB7EDE /* ps.sh in Resources */,
+				249AD0721AC2AC8B00DB7EDE /* ViewController.xib in Resources */,
+				24327DDB1AC2A39D00E20592 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		24327DDE1AC2A39D00E20592 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		24327DCC1AC2A39D00E20592 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				249AD0711AC2AC8B00DB7EDE /* ViewController.swift in Sources */,
+				249AD0741AC2C1AD00DB7EDE /* AppModel.swift in Sources */,
+				24327DD61AC2A39D00E20592 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		24327DDC1AC2A39D00E20592 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				24327DE71AC2A39D00E20592 /* DeeployTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		24327DE21AC2A39D00E20592 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 24327DCF1AC2A39D00E20592 /* Deeploy */;
+			targetProxy = 24327DE11AC2A39D00E20592 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		24327DD91AC2A39D00E20592 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				24327DDA1AC2A39D00E20592 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		24327DE81AC2A39D00E20592 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		24327DE91AC2A39D00E20592 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		24327DEB1AC2A39E00E20592 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Deeploy/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.disney.idsm.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		24327DEC1AC2A39E00E20592 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Deeploy/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.disney.idsm.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		24327DEE1AC2A39E00E20592 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = DeeployTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.disney.idsm.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Deeploy.app/Contents/MacOS/Deeploy";
+			};
+			name = Debug;
+		};
+		24327DEF1AC2A39E00E20592 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = DeeployTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.disney.idsm.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Deeploy.app/Contents/MacOS/Deeploy";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		24327DCB1AC2A39D00E20592 /* Build configuration list for PBXProject "Deeploy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				24327DE81AC2A39D00E20592 /* Debug */,
+				24327DE91AC2A39D00E20592 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		24327DEA1AC2A39E00E20592 /* Build configuration list for PBXNativeTarget "Deeploy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				24327DEB1AC2A39E00E20592 /* Debug */,
+				24327DEC1AC2A39E00E20592 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		24327DED1AC2A39E00E20592 /* Build configuration list for PBXNativeTarget "DeeployTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				24327DEE1AC2A39E00E20592 /* Debug */,
+				24327DEF1AC2A39E00E20592 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 24327DC81AC2A39D00E20592 /* Project object */;
+}
