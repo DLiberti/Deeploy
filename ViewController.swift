@@ -149,7 +149,7 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
             
          fileManager.createFileAtPath(logFile, contents: nil, attributes: nil)
             do {
-                try theMessage.writeToFile(logFile, atomically: true, encoding: NSUTF8StringEncoding)
+                try message.writeToFile(logFile, atomically: true, encoding: NSUTF8StringEncoding)
             } catch let error as NSError! {
                 print(error)
             }
@@ -162,7 +162,6 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
         let pathToLibrary: String = "/Users/Shared/"
         let urlToLibrary: NSURL = NSURL(fileURLWithPath: pathToLibrary)
         if let libraryDirectory:NSURL = urlToLibrary as NSURL!{
-            print(libraryDirectory)
             let prefDirectory = libraryDirectory.URLByAppendingPathComponent("Deeploy", isDirectory: true)
             let finalPlistPath = prefDirectory.URLByAppendingPathComponent("com.disney.Deeploy.plist")
             var theError: NSError?
@@ -178,15 +177,18 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
                         return finalPlistPath
                     } catch let error as NSError {
                         print("Error: \(error)")
+                        self.writeLog(message: "\(error)")
                         exit(1)
                     }
                 } else {
-                        print("Couldn't find initial plist in the bundle!")
+                        //print("Couldn't find initial plist in the bundle!")
+                        self.writeLog(message: "Couldn't find initial plist in the bundle.")
                     exit(1)
                     }
                 }
             } else {
                 print("Couldn't get documents directory!")
+                self.writeLog(message: "Couldn't get preferences directory!")
                 exit(1)
         }
     
@@ -226,6 +228,7 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
         
         if fileManager.fileExistsAtPath(localPreferencesToString) {
             print("fileIsThere")
+            self.writeLog(message: "Loading preferences")
             
             localUserPreferecesArray = NSDictionary(contentsOfFile: localPreferencesToString)!
             daysLeft = localUserPreferecesArray["DaysLeftBeforeUpdate"] as! Int
@@ -234,6 +237,7 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
         }
         else {
             print("fileIsNotThereBUtShoudlBe")
+            self.writeLog(message: "Prefereces file not available")
         }
     }
     
@@ -294,6 +298,7 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
         
         if fileManager.fileExistsAtPath(localPrefPlist) {
             
+            self.writeLog(message: "Checking folders structure")
             localPrefArray = NSDictionary(contentsOfFile: localPrefPlist)!
             serverURL = localPrefArray["ServerRepoURL"] as! String
             remoteProductionCatalog = localPrefArray["RemoteProductionCatalog"] as! String
@@ -308,6 +313,7 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
             
         else {
             print("File preferences not avaialble")
+            self.writeLog(message: "File preferences not avaialble")
         }
         
         var isDir: ObjCBool = false
@@ -338,6 +344,7 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
         }
         else {
             print("com.disney.deeploy.listener.plist -> KO")
+            self.writeLog(message: "com.disney.deeploy.listener.plist -> KO")
             exit(1)
         }
         
@@ -346,6 +353,7 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
         }
         else {
             print("\(applicationSupportInstallerScript) -> KO")
+            self.writeLog(message: "\(applicationSupportInstallerScript) -> KO")
             exit(1)
         }
         if fileManager.fileExistsAtPath(applicationSupportRunScript) {
@@ -353,6 +361,7 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
         }
         else {
             print("\(applicationSupportRunScript) -> KO")
+            self.writeLog(message: "\(applicationSupportRunScript) -> KO")
             exit(1)
         }
         
@@ -373,11 +382,14 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
         
         if exitStatus == 0 {
             print("\(hostName) is avaialble")
+            self.writeLog(message: "\(hostName) is avaialble")
+            
         }
             
         else {
             print("\(hostName) in not avaialble")
-            sleep(3)
+            self.writeLog(message: "\(hostName) is not avaialble, now exit")
+            sleep(2)
             exit(1)
         }
     }
@@ -402,11 +414,13 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
                 if updatesAvailable == 0 {
                     //se non ci sono update
                     print("no updates available")
+                    self.writeLog(message: "No updates available for this mac")
                     exit(0)
                 }
                 
                 else {
                     print("update avaialabe let's go ahead")
+                    self.writeLog(message: "There are available updates for this mac")
                 }
             }
             
@@ -417,6 +431,8 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
                     try fileManger.copyItemAtPath(temporaryProductionCatalog, toPath: currentProductionCatalog)
                 } catch let removeError as NSError {
                     print("Error: \(removeError)")
+                    self.writeLog(message: "Error: \(removeError)")
+                    
                 }
             }
         }
@@ -426,6 +442,8 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
                 try fileManger.copyItemAtPath(temporaryProductionCatalog, toPath: currentProductionCatalog)
             } catch let error as NSError {
                 print("Error: \(error)")
+                self.writeLog(message: "Error: \(error)")
+                
             }
         }
     }
@@ -441,6 +459,8 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
         }
         else {
             print("Local Production Catalog not Available")
+            self.writeLog(message: "Production Catalog not available locally")
+            sleep(2)
             exit(0)
         }
         
@@ -480,6 +500,7 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
                 try fileManager.removeItemAtPath(filePath)
             } catch let removeError as NSError {
                 print("Error: \(removeError)")
+                self.writeLog(message: "Tar Error: \(removeError)")
             }
 
             
@@ -498,6 +519,7 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
         if theListener == installerFile {
             
             updateProgessLabel(message: "Update in progress")
+            self.writeLog(message: "Update in progress")
             updateGear.startAnimation(self)
 
             while fileManager.fileExistsAtPath(filePathString) {
@@ -882,17 +904,21 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
                             let itemUrl = key["url"]!! as! NSString
                             self.fileDownlaod(serverUrl: self.serverURL, filePath: itemUrl as String, localFolder: self.installDir)
                             let fileName = itemUrl.lastPathComponent
+                            self.writeLog(message: "Downloading \(fileName)")
                             self.fileUntar(fileName: fileName, localFolder: self.installDir)
+                            self.writeLog(message: "Expanding \(fileName)")
                         }
                     }
                 }
                 self.updateProgessLabel(message: "Installing available updates...")
                 self.activateListener(theListener: self.installerFile)
+                self.writeLog(message: "Starting installation process")
                 
                 
             }
             else {
                 print("All applications are Up-to-date")
+                self.writeLog(message: "All applications are Up-to-date")
             }
             
             dispatch_async(dispatch_get_main_queue(), {
@@ -910,6 +936,7 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
         self.updateGear.stopAnimation(self)
         self.appToUpdate = []
         self.updateProgessLabel(message: "All avaialable updates have been installed")
+        self.writeLog(message: "All avaialable updates have been installed")
         self.TableView.reloadData()
         self.checkUpdateButtonLabel.enabled = true
         self.writeLocalPreferenceInt(theValue: 5, theKey: "DaysLeftBeforeUpdate")
@@ -990,11 +1017,12 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
                 
                 self.activateListener(theListener: self.runFile)
                 self.updateProgessLabel(message: "Updates ready to be installed at logout")
+                self.writeLog(message: "Updates ready to be installed at logout")
                 
             }
             else {
                 self.showMyAlert(myMessage: "All applications are Up-to-date")
-                
+                self.writeLog(message: "All applications are Up-to-date")
             }
             
             dispatch_async(dispatch_get_main_queue(), {
@@ -1013,6 +1041,7 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
             self.writeLocalPreferenceInt(theValue: daysLeft, theKey: "DaysLeftBeforeUpdate")
             if appToUpdate.count > 0 {
                 self.writeLocalPreferenceInt(theValue: 1, theKey: "UpdatesAvailable")
+                self.writeLog(message: "Update postponed")
             }
             
             exit(0)
