@@ -63,11 +63,6 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
     var updateArray:NSDictionary = NSDictionary()
     
     override func viewDidLoad() {
-        if #available(OSX 10.10, *) {
-            super.viewDidLoad()
-        } else {
-            // Fallback on earlier versions
-        }
         
         // Do any additional setup after loading the view.
     }
@@ -247,6 +242,9 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
             daysLeftLabel.integerValue = daysLeft
             }
         else {
+            
+            self.appDelegate.quitDeeployMenuItem.target = self
+            self.appDelegate.quitDeeployMenuItem.hidden = true
             daysLeftLabel.integerValue = daysLeft
             daysLeftLabel.textColor = NSColor.redColor()
             self.quitButtonLabel.enabled = false
@@ -708,7 +706,6 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
                         let infoDict = NSDictionary(contentsOfFile: filePath)
                         if infoDict!["CFBundleVersion"] != nil {
                             let appVersion = infoDict!["CFBundleVersion"] as! String
-                            print(appVersion)
                             //instanzio il modello e lo infilo nell'array
                             let appName = NSString(string: theItem).stringByDeletingPathExtension
                             let appTask = AppModel(app: appName, vers: appVersion, logout: "no")
@@ -736,7 +733,6 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
                         let infoDict = NSDictionary(contentsOfFile: filePath)
                         if infoDict!["CFBundleVersion"] != nil {
                             let appVersion = infoDict!["CFBundleVersion"] as! String
-                            print(appVersion)
                             //instanzio il modello e lo infilo nell'array
                             let appName = NSString(string: theItem).stringByDeletingPathExtension
                             let appTask = AppModel(app: appName, vers: appVersion, logout: "no")
@@ -770,7 +766,6 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
                         let infoDict = NSDictionary(contentsOfFile: filePath)
                         if infoDict!["CFBundleShortVersionString"] != nil {
                             let appVersion = infoDict!["CFBundleShortVersionString"] as! String
-                            print(appVersion)
                             let appName = NSString(string: theItem).stringByDeletingPathExtension
                             let appTask = AppModel(app: appName, vers: appVersion, logout: "no")
                             print(appName, appVersion)
@@ -797,7 +792,6 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
                                         let infoDict = NSDictionary(contentsOfFile: filePath)
                                         if infoDict!["CFBundleShortVersionString"] != nil {
                                             let appVersion = infoDict!["CFBundleShortVersionString"] as! String
-                                            print(appVersion)
                                             let appName = NSString(string: theItem).stringByDeletingPathExtension
                                             let appTask = AppModel(app: appName, vers: appVersion, logout: "no")
                                             //print(appName, appVersion)
@@ -1032,6 +1026,38 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
                 self.writeLocalPreferenceInt(theValue: 0, theKey: "UpdatesAvailable")
             })
         })
+    }
+    
+    func beforeToQuit() {
+        
+        if daysLeft > 0 {
+            daysLeft = daysLeft - 1
+            self.writeLocalPreferenceInt(theValue: daysLeft, theKey: "DaysLeftBeforeUpdate")
+            if appToUpdate.count > 0 {
+                self.writeLocalPreferenceInt(theValue: 1, theKey: "UpdatesAvailable")
+                self.writeLog(message: "Update postponed")
+            }
+        }
+            
+        else {
+                if self.appToUpdate.count > 0 {
+                
+                for index in 0..<self.appToUpdate.count {
+                    let itemToUpdate = self.appToUpdate[index].app
+                    for (item, key) in self.updateArray as NSDictionary {
+                        if item as? NSString == itemToUpdate {
+                            let itemUrl = key["url"]!! as! NSString
+                            self.fileDownlaod(serverUrl: self.serverURL, filePath: itemUrl as String, localFolder: self.installDir)
+                            let fileName = itemUrl.lastPathComponent
+                            self.fileUntar(fileName: fileName, localFolder: self.installDir)
+                        }
+                    }
+                }
+                self.activateListener(theListener: self.runFile)
+            }
+
+        }
+    
     }
     
     @IBAction func quitButton(sender: NSButton) {
