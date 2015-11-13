@@ -242,12 +242,9 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
             daysLeftLabel.integerValue = daysLeft
             }
         else {
-            
-            self.appDelegate.quitDeeployMenuItem.target = self
-            self.appDelegate.quitDeeployMenuItem.hidden = true
+            self.appDelegate.quitDeeploy.target = self
             daysLeftLabel.integerValue = daysLeft
             daysLeftLabel.textColor = NSColor.redColor()
-            self.quitButtonLabel.enabled = false
             self.runAtLogoutButtonLabel.enabled = false
             self.checkUpdateButtonLabel.enabled = false
         }
@@ -858,7 +855,6 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
             self.runAtLogoutButtonLabel.enabled = false
             self.checkUpdateButtonLabel.enabled = false
             self.updateNowButtonLabel.enabled = false
-            self.quitButtonLabel.enabled = false
             
             if self.appToUpdate.count > 0 {
                 
@@ -932,6 +928,7 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
         self.updateProgessLabel(message: "All avaialable updates have been installed")
         self.writeLog(message: "All avaialable updates have been installed")
         self.TableView.reloadData()
+        self.appDelegate.quitDeeploy.target = nil
         self.checkUpdateButtonLabel.enabled = true
         self.writeLocalPreferenceInt(theValue: 5, theKey: "DaysLeftBeforeUpdate")
         self.writeLocalPreferenceInt(theValue: 0, theKey: "UpdatesAvailable")
@@ -946,7 +943,6 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
             self.runAtLogoutButtonLabel.enabled = false
             self.updateNowButtonLabel.enabled = false
             self.checkUpdateButtonLabel.enabled = false
-            self.quitButtonLabel.enabled = false
             self.updateProgessLabel(message: "Checking for available updates")
             self.appArray = []
             self.appToUpdate = []
@@ -963,7 +959,6 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
                 self.runAtLogoutButtonLabel.enabled = true
                 self.updateNowButtonLabel.enabled = true
                 self.checkUpdateButtonLabel.enabled = true
-                self.quitButtonLabel.enabled = true
                 self.writeLocalPreferenceInt(theValue: 1, theKey: "UpdatesAvailable")
             }
             else {
@@ -977,7 +972,7 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
             }
             
             dispatch_async(dispatch_get_main_queue(), {
-                //println("main queue, after the previous block")
+                //print("main queue, after the previous block")
                 //self.TableView.reloadData()
                 //self.updateGear.stopAnimation(self)
 
@@ -1058,27 +1053,6 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
 
         }
     
-    }
-    
-    @IBAction func quitButton(sender: NSButton) {
-        
-        if daysLeft > 0 {
-            daysLeft = daysLeft - 1
-            self.writeLocalPreferenceInt(theValue: daysLeft, theKey: "DaysLeftBeforeUpdate")
-            if appToUpdate.count > 0 {
-                self.writeLocalPreferenceInt(theValue: 1, theKey: "UpdatesAvailable")
-                self.writeLog(message: "Update postponed")
-            }
-            
-            exit(0)
-        }
-        
-        else {
-            self.checkUpdateButtonLabel.enabled = false
-            self.runAtLogoutButtonLabel.enabled = false
-            self.quitButtonLabel.enabled = false
-        }
-        
     }
     
 } //finale

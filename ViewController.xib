@@ -10,7 +10,6 @@
                 <outlet property="checkUpdateButtonLabel" destination="bR1-IM-qmf" id="ljX-05-kAc"/>
                 <outlet property="daysLeftLabel" destination="SNN-nC-obi" id="MA2-IS-2df"/>
                 <outlet property="progressLabel" destination="OY0-qP-5zF" id="VUH-sC-y52"/>
-                <outlet property="quitButtonLabel" destination="Lk2-E8-Vhc" id="WsL-Xo-JhB"/>
                 <outlet property="runAtLogoutButtonLabel" destination="VUX-W0-dAu" id="tSA-KA-Fnx"/>
                 <outlet property="updateGear" destination="a64-9Z-HCu" id="ImB-lT-1fq"/>
                 <outlet property="updateNowButtonLabel" destination="4G8-9a-4K3" id="F7l-r0-4q3"/>
@@ -161,17 +160,6 @@
                     <animations/>
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="Deeploy" id="tVU-se-q94"/>
                 </imageView>
-                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lk2-E8-Vhc">
-                    <rect key="frame" x="129" y="13" width="122" height="32"/>
-                    <animations/>
-                    <buttonCell key="cell" type="push" title="Not Now/Quit" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="kyz-t5-0ij">
-                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="system"/>
-                    </buttonCell>
-                    <connections>
-                        <action selector="quitButton:" target="-2" id="lWJ-I6-cRS"/>
-                    </connections>
-                </button>
                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VUX-W0-dAu">
                     <rect key="frame" x="241" y="13" width="129" height="32"/>
                     <animations/>
