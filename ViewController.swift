@@ -132,19 +132,30 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
         
         let currentTimestamp = printTimestamp()
         let fileManager = NSFileManager.defaultManager()
-        let message:NSString = ("\(currentTimestamp) -> \(theMessage)")
+        let message:NSString = ("\(currentTimestamp) -> \(theMessage)\n")
+        let messageData: NSData = message.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)!
+        let logFileUrl = NSURL(fileURLWithPath: logFile)
         
-        if fileManager.fileExistsAtPath(logFile) {
+        if fileManager.fileExistsAtPath(logFileUrl.path!) {
             do {
-                try message.writeToFile(logFile, atomically: true, encoding: NSUTF8StringEncoding)
+                let fileHandle = try NSFileHandle(forWritingToURL: logFileUrl)
+                fileHandle.seekToEndOfFile()
+                fileHandle.writeData(messageData)
+                fileHandle.closeFile()
+                
+                //try message.writeToFile(logFile, atomically: true, encoding: NSUTF8StringEncoding)
             } catch let error as NSError! {
                 print(error)
             }
         } else {
             
-         fileManager.createFileAtPath(logFile, contents: nil, attributes: nil)
+         fileManager.createFileAtPath(logFileUrl.path!, contents: nil, attributes: nil)
             do {
-                try message.writeToFile(logFile, atomically: true, encoding: NSUTF8StringEncoding)
+                let fileHandle = try NSFileHandle(forWritingToURL: logFileUrl)
+                fileHandle.seekToEndOfFile()
+                fileHandle.writeData(messageData)
+                fileHandle.closeFile()
+
             } catch let error as NSError! {
                 print(error)
             }
@@ -424,6 +435,7 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
                 do {
                     try fileManger.removeItemAtPath(currentProductionCatalog)
                     try fileManger.copyItemAtPath(temporaryProductionCatalog, toPath: currentProductionCatalog)
+                    self.writeLog(message: "New catalog found, checking new updates")
                 } catch let removeError as NSError {
                     print("Error: \(removeError)")
                     self.writeLog(message: "Error: \(removeError)")
@@ -601,7 +613,6 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
         if clientIndex < serverIndex {
             print("client index < server index")
             let indexToAdd = serverIndex - clientIndex
-            print("questo è : \(indexToAdd)")
             for index in 1...indexToAdd {
                 print("number of 0 to add: \(index)")
                 clientVersionSplit.append("0")
@@ -612,7 +623,6 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
         else if clientIndex > serverIndex {
             print("client index > server index")
             let indexToAdd = clientIndex - serverIndex
-            print("\(indexToAdd)")
             for index in 1...indexToAdd {
                 print("number of 0 to add: \(index)")
                 serverVersionSplit.append("0")
@@ -901,8 +911,8 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
                     }
                 }
                 self.updateProgessLabel(message: "Installing available updates...")
+                self.writeLog(message: "Installing available updates...")
                 self.activateListener(theListener: self.installerFile)
-                self.writeLog(message: "Starting installation process")
                 
                 
             }
@@ -944,6 +954,7 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
             self.updateNowButtonLabel.enabled = false
             self.checkUpdateButtonLabel.enabled = false
             self.updateProgessLabel(message: "Checking for available updates")
+            self.writeLog(message: "Checking for available updates")
             self.appArray = []
             self.appToUpdate = []
             self.TableView.reloadData()
@@ -956,6 +967,7 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
 
             if self.appToUpdate.count > 0 {
                 self.updateProgessLabel(message: "There are \(self.appToUpdate.count) available updates for your computer")
+                self.writeLog(message: "There are \(self.appToUpdate.count) available updates for your computer")
                 self.runAtLogoutButtonLabel.enabled = true
                 self.updateNowButtonLabel.enabled = true
                 self.checkUpdateButtonLabel.enabled = true
@@ -963,6 +975,7 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
             }
             else {
                 self.updateProgessLabel(message: "No available updates for your computer")
+                self.writeLog(message: "No available updates for your computer")
                 self.checkUpdateButtonLabel.enabled = true
                 self.runAtLogoutButtonLabel.enabled = false
                 self.updateNowButtonLabel.enabled = false
@@ -1005,8 +1018,8 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
                 }
                 
                 self.activateListener(theListener: self.runFile)
-                self.updateProgessLabel(message: "Updates ready to be installed at logout")
-                self.writeLog(message: "Updates ready to be installed at logout")
+                self.updateProgessLabel(message: "Updates ready to be installed at restart")
+                self.writeLog(message: "Updates ready to be installed at restart")
                 
             }
             else {
