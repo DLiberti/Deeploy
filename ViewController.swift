@@ -799,9 +799,9 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
                                         let infoDict = NSDictionary(contentsOfFile: filePath)
                                         if infoDict!["CFBundleShortVersionString"] != nil {
                                             let appVersion = infoDict!["CFBundleShortVersionString"] as! String
-                                            let appName = NSString(string: theItem).stringByDeletingPathExtension
+                                            let appName = NSString(string: subItem).stringByDeletingPathExtension
                                             let appTask = AppModel(app: appName, vers: appVersion, logout: "no")
-                                            //print(appName, appVersion)
+                                            print(appName, appVersion)
                                             //aggiungo all'arrary
                                             appArray.append(appTask)
                                         }
