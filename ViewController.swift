@@ -150,6 +150,7 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
         } else {
             
          fileManager.createFileAtPath(logFileUrl.path!, contents: nil, attributes: nil)
+            changePermission(targetURL: logFileUrl)
             do {
                 let fileHandle = try NSFileHandle(forWritingToURL: logFileUrl)
                 fileHandle.seekToEndOfFile()
