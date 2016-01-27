@@ -7,17 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		240D6FA61C50FA7000DF42A3 /* DeeployShop.png in Resources */ = {isa = PBXBuildFile; fileRef = 240D6FA51C50FA7000DF42A3 /* DeeployShop.png */; };
+		242414001C4E25A30075F9E9 /* ShopAppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242413FF1C4E25A30075F9E9 /* ShopAppModel.swift */; };
 		24327DD61AC2A39D00E20592 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24327DD51AC2A39D00E20592 /* AppDelegate.swift */; };
-		24327DD81AC2A39D00E20592 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24327DD71AC2A39D00E20592 /* Images.xcassets */; };
 		24327DDB1AC2A39D00E20592 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24327DD91AC2A39D00E20592 /* MainMenu.xib */; };
 		24327DE71AC2A39D00E20592 /* DeeployTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24327DE61AC2A39D00E20592 /* DeeployTests.swift */; };
+		2449EB0F1C47E1E100F20646 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2449EB0E1C47E1E100F20646 /* ViewController.swift */; };
+		2449EB111C47E1F300F20646 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2449EB101C47E1F300F20646 /* ViewController.xib */; };
+		2449EB171C47F2F300F20646 /* ShopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2449EB161C47F2F300F20646 /* ShopViewController.xib */; };
+		2449EB191C47F33B00F20646 /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2449EB181C47F33B00F20646 /* ShopViewController.swift */; };
+		244DDB871C4904B3003F297A /* AppsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244DDB861C4904B3003F297A /* AppsTableViewCell.swift */; };
 		245DD7381ADFE0F8002323AD /* com.disney.Deeploy.plist in Resources */ = {isa = PBXBuildFile; fileRef = 245DD7371ADFE0F8002323AD /* com.disney.Deeploy.plist */; };
 		248F60D31AC2D31B00476F20 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 248F60D21AC2D31B00476F20 /* Media.xcassets */; };
 		248F60D51AC2D53D00476F20 /* Deeploy.png in Resources */ = {isa = PBXBuildFile; fileRef = 248F60D41AC2D53D00476F20 /* Deeploy.png */; };
-		249AD0711AC2AC8B00DB7EDE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249AD06F1AC2AC8B00DB7EDE /* ViewController.swift */; };
-		249AD0721AC2AC8B00DB7EDE /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 249AD0701AC2AC8B00DB7EDE /* ViewController.xib */; };
 		249AD0741AC2C1AD00DB7EDE /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249AD0731AC2C1AD00DB7EDE /* AppModel.swift */; };
 		249AD0761AC2D18800DB7EDE /* ps.sh in Resources */ = {isa = PBXBuildFile; fileRef = 249AD0751AC2D18800DB7EDE /* ps.sh */; };
+		24A330C91C56686600C48D90 /* GenericApplication.png in Resources */ = {isa = PBXBuildFile; fileRef = 24A330C81C56686600C48D90 /* GenericApplication.png */; };
+		24CA08971C1ED22400955BD3 /* deeploybyuser.sh in Resources */ = {isa = PBXBuildFile; fileRef = 24CA08961C1ED22400955BD3 /* deeploybyuser.sh */; };
+		24CAD6A21C58D9F400187BDC /* deeploy_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 24CAD6A11C58D9F400187BDC /* deeploy_logo.png */; };
+		24CAD6A91C58DE2A00187BDC /* Shop-Closed.png in Resources */ = {isa = PBXBuildFile; fileRef = 24CAD6A71C58DE2A00187BDC /* Shop-Closed.png */; };
+		24CAD6AA1C58DE2A00187BDC /* Shop-Open.png in Resources */ = {isa = PBXBuildFile; fileRef = 24CAD6A81C58DE2A00187BDC /* Shop-Open.png */; };
+		24CAD6B01C58E30600187BDC /* Button-UpdateNow.png in Resources */ = {isa = PBXBuildFile; fileRef = 24CAD6AF1C58E30600187BDC /* Button-UpdateNow.png */; };
+		24D0BE201C4CD08700184BAB /* AppsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24D0BE1F1C4CD08700184BAB /* AppsTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,25 +42,36 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		240D6FA51C50FA7000DF42A3 /* DeeployShop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DeeployShop.png; sourceTree = "<group>"; };
+		242413FF1C4E25A30075F9E9 /* ShopAppModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopAppModel.swift; sourceTree = "<group>"; };
 		24327DD01AC2A39D00E20592 /* Deeploy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Deeploy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24327DD41AC2A39D00E20592 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		24327DD51AC2A39D00E20592 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		24327DD71AC2A39D00E20592 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		24327DDA1AC2A39D00E20592 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		24327DE01AC2A39D00E20592 /* DeeployTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DeeployTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		24327DE51AC2A39D00E20592 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		24327DE61AC2A39D00E20592 /* DeeployTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeeployTests.swift; sourceTree = "<group>"; };
+		2449EB0E1C47E1E100F20646 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2449EB101C47E1F300F20646 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
+		2449EB161C47F2F300F20646 /* ShopViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShopViewController.xib; sourceTree = "<group>"; };
+		2449EB181C47F33B00F20646 /* ShopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
+		244DDB861C4904B3003F297A /* AppsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppsTableViewCell.swift; sourceTree = "<group>"; };
 		245DD7371ADFE0F8002323AD /* com.disney.Deeploy.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = com.disney.Deeploy.plist; sourceTree = "<group>"; };
 		248F60D21AC2D31B00476F20 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Media.xcassets; path = ../Media.xcassets; sourceTree = "<group>"; };
 		248F60D41AC2D53D00476F20 /* Deeploy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Deeploy.png; sourceTree = "<group>"; };
 		248F60D61AC3114900476F20 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		248F60D81AC3115000476F20 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		248F60DA1AC3115B00476F20 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		249AD06F1AC2AC8B00DB7EDE /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = ../ViewController.swift; sourceTree = "<group>"; };
-		249AD0701AC2AC8B00DB7EDE /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ViewController.xib; path = ../ViewController.xib; sourceTree = "<group>"; };
 		249AD0731AC2C1AD00DB7EDE /* AppModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
 		249AD0751AC2D18800DB7EDE /* ps.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = ps.sh; sourceTree = "<group>"; };
+		24A330C81C56686600C48D90 /* GenericApplication.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GenericApplication.png; sourceTree = "<group>"; };
 		24BB89421ACD440C0065C65C /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
+		24CA08961C1ED22400955BD3 /* deeploybyuser.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = deeploybyuser.sh; sourceTree = "<group>"; };
+		24CAD6A11C58D9F400187BDC /* deeploy_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = deeploy_logo.png; sourceTree = "<group>"; };
+		24CAD6A71C58DE2A00187BDC /* Shop-Closed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Shop-Closed.png"; sourceTree = "<group>"; };
+		24CAD6A81C58DE2A00187BDC /* Shop-Open.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Shop-Open.png"; sourceTree = "<group>"; };
+		24CAD6AF1C58E30600187BDC /* Button-UpdateNow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Button-UpdateNow.png"; sourceTree = "<group>"; };
+		24D0BE1F1C4CD08700184BAB /* AppsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppsTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,14 +117,19 @@
 		24327DD21AC2A39D00E20592 /* Deeploy */ = {
 			isa = PBXGroup;
 			children = (
-				248F60D21AC2D31B00476F20 /* Media.xcassets */,
-				249AD0731AC2C1AD00DB7EDE /* AppModel.swift */,
-				249AD06F1AC2AC8B00DB7EDE /* ViewController.swift */,
-				249AD0701AC2AC8B00DB7EDE /* ViewController.xib */,
-				245DD7371ADFE0F8002323AD /* com.disney.Deeploy.plist */,
-				24327DD51AC2A39D00E20592 /* AppDelegate.swift */,
-				24327DD71AC2A39D00E20592 /* Images.xcassets */,
+				24327DD41AC2A39D00E20592 /* Info.plist */,
+				24D0BE1F1C4CD08700184BAB /* AppsTableViewCell.xib */,
+				244DDB861C4904B3003F297A /* AppsTableViewCell.swift */,
+				2449EB161C47F2F300F20646 /* ShopViewController.xib */,
+				2449EB181C47F33B00F20646 /* ShopViewController.swift */,
+				242413FF1C4E25A30075F9E9 /* ShopAppModel.swift */,
+				2449EB101C47E1F300F20646 /* ViewController.xib */,
+				2449EB0E1C47E1E100F20646 /* ViewController.swift */,
 				24327DD91AC2A39D00E20592 /* MainMenu.xib */,
+				24327DD51AC2A39D00E20592 /* AppDelegate.swift */,
+				249AD0731AC2C1AD00DB7EDE /* AppModel.swift */,
+				248F60D21AC2D31B00476F20 /* Media.xcassets */,
+				245DD7371ADFE0F8002323AD /* com.disney.Deeploy.plist */,
 				24327DD31AC2A39D00E20592 /* Supporting Files */,
 			);
 			path = Deeploy;
@@ -111,9 +138,15 @@
 		24327DD31AC2A39D00E20592 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				249AD0751AC2D18800DB7EDE /* ps.sh */,
+				24CAD6AF1C58E30600187BDC /* Button-UpdateNow.png */,
+				24CAD6A71C58DE2A00187BDC /* Shop-Closed.png */,
+				24CAD6A81C58DE2A00187BDC /* Shop-Open.png */,
+				24CAD6A11C58D9F400187BDC /* deeploy_logo.png */,
+				24A330C81C56686600C48D90 /* GenericApplication.png */,
+				240D6FA51C50FA7000DF42A3 /* DeeployShop.png */,
 				248F60D41AC2D53D00476F20 /* Deeploy.png */,
-				24327DD41AC2A39D00E20592 /* Info.plist */,
+				24CA08961C1ED22400955BD3 /* deeploybyuser.sh */,
+				249AD0751AC2D18800DB7EDE /* ps.sh */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -217,12 +250,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2449EB171C47F2F300F20646 /* ShopViewController.xib in Resources */,
+				24A330C91C56686600C48D90 /* GenericApplication.png in Resources */,
+				24CAD6A91C58DE2A00187BDC /* Shop-Closed.png in Resources */,
 				245DD7381ADFE0F8002323AD /* com.disney.Deeploy.plist in Resources */,
 				248F60D31AC2D31B00476F20 /* Media.xcassets in Resources */,
-				24327DD81AC2A39D00E20592 /* Images.xcassets in Resources */,
+				24CAD6AA1C58DE2A00187BDC /* Shop-Open.png in Resources */,
+				2449EB111C47E1F300F20646 /* ViewController.xib in Resources */,
+				24CAD6B01C58E30600187BDC /* Button-UpdateNow.png in Resources */,
 				248F60D51AC2D53D00476F20 /* Deeploy.png in Resources */,
 				249AD0761AC2D18800DB7EDE /* ps.sh in Resources */,
-				249AD0721AC2AC8B00DB7EDE /* ViewController.xib in Resources */,
+				24CA08971C1ED22400955BD3 /* deeploybyuser.sh in Resources */,
+				24CAD6A21C58D9F400187BDC /* deeploy_logo.png in Resources */,
+				24D0BE201C4CD08700184BAB /* AppsTableViewCell.xib in Resources */,
+				240D6FA61C50FA7000DF42A3 /* DeeployShop.png in Resources */,
 				24327DDB1AC2A39D00E20592 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -241,9 +282,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				249AD0711AC2AC8B00DB7EDE /* ViewController.swift in Sources */,
+				2449EB191C47F33B00F20646 /* ShopViewController.swift in Sources */,
+				242414001C4E25A30075F9E9 /* ShopAppModel.swift in Sources */,
 				249AD0741AC2C1AD00DB7EDE /* AppModel.swift in Sources */,
+				2449EB0F1C47E1E100F20646 /* ViewController.swift in Sources */,
 				24327DD61AC2A39D00E20592 /* AppDelegate.swift in Sources */,
+				244DDB871C4904B3003F297A /* AppsTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
