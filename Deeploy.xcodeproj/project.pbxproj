@@ -27,7 +27,10 @@
 		24CAD6A21C58D9F400187BDC /* deeploy_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 24CAD6A11C58D9F400187BDC /* deeploy_logo.png */; };
 		24CAD6A91C58DE2A00187BDC /* Shop-Closed.png in Resources */ = {isa = PBXBuildFile; fileRef = 24CAD6A71C58DE2A00187BDC /* Shop-Closed.png */; };
 		24CAD6AA1C58DE2A00187BDC /* Shop-Open.png in Resources */ = {isa = PBXBuildFile; fileRef = 24CAD6A81C58DE2A00187BDC /* Shop-Open.png */; };
-		24CAD6B01C58E30600187BDC /* Button-UpdateNow.png in Resources */ = {isa = PBXBuildFile; fileRef = 24CAD6AF1C58E30600187BDC /* Button-UpdateNow.png */; };
+		24CAD6B41C5904E900187BDC /* Button-CheckUpdates.png in Resources */ = {isa = PBXBuildFile; fileRef = 24CAD6B11C5904E900187BDC /* Button-CheckUpdates.png */; };
+		24CAD6B51C5904E900187BDC /* Button-InstallRestart.png in Resources */ = {isa = PBXBuildFile; fileRef = 24CAD6B21C5904E900187BDC /* Button-InstallRestart.png */; };
+		24CAD6B61C5904E900187BDC /* Button-UpdateNow.png in Resources */ = {isa = PBXBuildFile; fileRef = 24CAD6B31C5904E900187BDC /* Button-UpdateNow.png */; };
+		24CAD6B81C5907A600187BDC /* Button-Shop.png in Resources */ = {isa = PBXBuildFile; fileRef = 24CAD6B71C5907A600187BDC /* Button-Shop.png */; };
 		24D0BE201C4CD08700184BAB /* AppsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24D0BE1F1C4CD08700184BAB /* AppsTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
@@ -70,7 +73,10 @@
 		24CAD6A11C58D9F400187BDC /* deeploy_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = deeploy_logo.png; sourceTree = "<group>"; };
 		24CAD6A71C58DE2A00187BDC /* Shop-Closed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Shop-Closed.png"; sourceTree = "<group>"; };
 		24CAD6A81C58DE2A00187BDC /* Shop-Open.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Shop-Open.png"; sourceTree = "<group>"; };
-		24CAD6AF1C58E30600187BDC /* Button-UpdateNow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Button-UpdateNow.png"; sourceTree = "<group>"; };
+		24CAD6B11C5904E900187BDC /* Button-CheckUpdates.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Button-CheckUpdates.png"; sourceTree = "<group>"; };
+		24CAD6B21C5904E900187BDC /* Button-InstallRestart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Button-InstallRestart.png"; sourceTree = "<group>"; };
+		24CAD6B31C5904E900187BDC /* Button-UpdateNow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Button-UpdateNow.png"; sourceTree = "<group>"; };
+		24CAD6B71C5907A600187BDC /* Button-Shop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Button-Shop.png"; sourceTree = "<group>"; };
 		24D0BE1F1C4CD08700184BAB /* AppsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppsTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -138,7 +144,10 @@
 		24327DD31AC2A39D00E20592 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				24CAD6AF1C58E30600187BDC /* Button-UpdateNow.png */,
+				24CAD6B71C5907A600187BDC /* Button-Shop.png */,
+				24CAD6B11C5904E900187BDC /* Button-CheckUpdates.png */,
+				24CAD6B21C5904E900187BDC /* Button-InstallRestart.png */,
+				24CAD6B31C5904E900187BDC /* Button-UpdateNow.png */,
 				24CAD6A71C58DE2A00187BDC /* Shop-Closed.png */,
 				24CAD6A81C58DE2A00187BDC /* Shop-Open.png */,
 				24CAD6A11C58D9F400187BDC /* deeploy_logo.png */,
@@ -251,13 +260,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				2449EB171C47F2F300F20646 /* ShopViewController.xib in Resources */,
+				24CAD6B51C5904E900187BDC /* Button-InstallRestart.png in Resources */,
 				24A330C91C56686600C48D90 /* GenericApplication.png in Resources */,
 				24CAD6A91C58DE2A00187BDC /* Shop-Closed.png in Resources */,
 				245DD7381ADFE0F8002323AD /* com.disney.Deeploy.plist in Resources */,
 				248F60D31AC2D31B00476F20 /* Media.xcassets in Resources */,
 				24CAD6AA1C58DE2A00187BDC /* Shop-Open.png in Resources */,
+				24CAD6B41C5904E900187BDC /* Button-CheckUpdates.png in Resources */,
 				2449EB111C47E1F300F20646 /* ViewController.xib in Resources */,
-				24CAD6B01C58E30600187BDC /* Button-UpdateNow.png in Resources */,
 				248F60D51AC2D53D00476F20 /* Deeploy.png in Resources */,
 				249AD0761AC2D18800DB7EDE /* ps.sh in Resources */,
 				24CA08971C1ED22400955BD3 /* deeploybyuser.sh in Resources */,
@@ -265,6 +275,8 @@
 				24D0BE201C4CD08700184BAB /* AppsTableViewCell.xib in Resources */,
 				240D6FA61C50FA7000DF42A3 /* DeeployShop.png in Resources */,
 				24327DDB1AC2A39D00E20592 /* MainMenu.xib in Resources */,
+				24CAD6B61C5904E900187BDC /* Button-UpdateNow.png in Resources */,
+				24CAD6B81C5907A600187BDC /* Button-Shop.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
