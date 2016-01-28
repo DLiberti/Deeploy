@@ -20,6 +20,7 @@
 		245DD7381ADFE0F8002323AD /* com.disney.Deeploy.plist in Resources */ = {isa = PBXBuildFile; fileRef = 245DD7371ADFE0F8002323AD /* com.disney.Deeploy.plist */; };
 		248F60D31AC2D31B00476F20 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 248F60D21AC2D31B00476F20 /* Media.xcassets */; };
 		248F60D51AC2D53D00476F20 /* Deeploy.png in Resources */ = {isa = PBXBuildFile; fileRef = 248F60D41AC2D53D00476F20 /* Deeploy.png */; };
+		2499C1AF1C5A5AFF006F17DB /* Button-Install.png in Resources */ = {isa = PBXBuildFile; fileRef = 2499C1AE1C5A5AFF006F17DB /* Button-Install.png */; };
 		249AD0741AC2C1AD00DB7EDE /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249AD0731AC2C1AD00DB7EDE /* AppModel.swift */; };
 		249AD0761AC2D18800DB7EDE /* ps.sh in Resources */ = {isa = PBXBuildFile; fileRef = 249AD0751AC2D18800DB7EDE /* ps.sh */; };
 		24A330C91C56686600C48D90 /* GenericApplication.png in Resources */ = {isa = PBXBuildFile; fileRef = 24A330C81C56686600C48D90 /* GenericApplication.png */; };
@@ -65,6 +66,7 @@
 		248F60D61AC3114900476F20 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		248F60D81AC3115000476F20 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		248F60DA1AC3115B00476F20 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		2499C1AE1C5A5AFF006F17DB /* Button-Install.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Button-Install.png"; sourceTree = "<group>"; };
 		249AD0731AC2C1AD00DB7EDE /* AppModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
 		249AD0751AC2D18800DB7EDE /* ps.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = ps.sh; sourceTree = "<group>"; };
 		24A330C81C56686600C48D90 /* GenericApplication.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GenericApplication.png; sourceTree = "<group>"; };
@@ -128,12 +130,12 @@
 				244DDB861C4904B3003F297A /* AppsTableViewCell.swift */,
 				2449EB161C47F2F300F20646 /* ShopViewController.xib */,
 				2449EB181C47F33B00F20646 /* ShopViewController.swift */,
-				242413FF1C4E25A30075F9E9 /* ShopAppModel.swift */,
 				2449EB101C47E1F300F20646 /* ViewController.xib */,
 				2449EB0E1C47E1E100F20646 /* ViewController.swift */,
 				24327DD91AC2A39D00E20592 /* MainMenu.xib */,
 				24327DD51AC2A39D00E20592 /* AppDelegate.swift */,
 				249AD0731AC2C1AD00DB7EDE /* AppModel.swift */,
+				242413FF1C4E25A30075F9E9 /* ShopAppModel.swift */,
 				248F60D21AC2D31B00476F20 /* Media.xcassets */,
 				245DD7371ADFE0F8002323AD /* com.disney.Deeploy.plist */,
 				24327DD31AC2A39D00E20592 /* Supporting Files */,
@@ -144,6 +146,7 @@
 		24327DD31AC2A39D00E20592 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				2499C1AE1C5A5AFF006F17DB /* Button-Install.png */,
 				24CAD6B71C5907A600187BDC /* Button-Shop.png */,
 				24CAD6B11C5904E900187BDC /* Button-CheckUpdates.png */,
 				24CAD6B21C5904E900187BDC /* Button-InstallRestart.png */,
@@ -263,6 +266,7 @@
 				24CAD6B51C5904E900187BDC /* Button-InstallRestart.png in Resources */,
 				24A330C91C56686600C48D90 /* GenericApplication.png in Resources */,
 				24CAD6A91C58DE2A00187BDC /* Shop-Closed.png in Resources */,
+				2499C1AF1C5A5AFF006F17DB /* Button-Install.png in Resources */,
 				245DD7381ADFE0F8002323AD /* com.disney.Deeploy.plist in Resources */,
 				248F60D31AC2D31B00476F20 /* Media.xcassets in Resources */,
 				24CAD6AA1C58DE2A00187BDC /* Shop-Open.png in Resources */,
